@@ -3,7 +3,7 @@ if (typeof document !== 'undefined' && document) {
   (function(){
   var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
   s1.async=true;
-  s1.src='https://embed.tawk.to/5e1a525227773e0d832d1397/default';
+  s1.src='https://embed.tawk.to/5ea5701535bcbb0c9ab4c4a0/default';
   s1.charset='UTF-8';
   s1.setAttribute('crossorigin','*');
   s0.parentNode.insertBefore(s1,s0);
@@ -12,11 +12,25 @@ if (typeof document !== 'undefined' && document) {
 
 export default () => (
   <div className='hello'>
-    <img src="/static/logo.png" width="50%" alt="Adelaida Design" />
-    <style jsx>{`
+    <img src="/static/logo.png" width="70%" alt="Adelaida Design" />
+    <style jsx global>{`
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
+      }
       .hello {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font: 15px Helvetica, Arial, sans-serif;
+        background: #cf011b;
         color: #7d7d7d;
+        padding: 0;
+        margin: 0;
         text-align: center;
         transition: 100ms ease-in background;
       }
