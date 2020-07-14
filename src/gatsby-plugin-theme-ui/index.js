@@ -9,12 +9,12 @@ export default {
     secondary: "#fff",
   },
   fonts: {
-    body: "'Oswald', system-ui, sans-serif",
-    heading: "'Oswald', system-ui, sans-serif",
+    body: "'Yanone Kaffeesatz', system-ui, sans-serif",
+    heading: "'Yanone Kaffeesatz', system-ui, sans-serif",
     monospace: "Menlo, monospace",
   },
   fontWeights: {
-    body: 200,
+    body: 300,
   },
   lineHeights: {
     body: 1.5,
