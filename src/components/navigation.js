@@ -27,13 +27,13 @@ const Navigation = () => {
           }}><Link to="/works">Works</Link></li>
         <li
           sx={{
-            position: 'absolute',
+            position: 'fixed',
             right: [2, 3, 4],
             bottom: 2
           }}><Link to="/contact">Contact</Link></li>
         <li
           sx={{
-            position: 'absolute',
+            position: 'fixed',
             left: [2, 3, 4],
             bottom: 2,
           }}

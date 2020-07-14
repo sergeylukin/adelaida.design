@@ -12,8 +12,10 @@ const IndexPage = () => (
     <SEO title="Home" />
     <div
       sx={{
+        position: 'fixed',
+        width: '100%',
+        height: '100%',
         display: 'flex',
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
       }}>

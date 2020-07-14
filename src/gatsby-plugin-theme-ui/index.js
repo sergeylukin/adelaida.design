@@ -14,7 +14,6 @@ export default {
     monospace: "Menlo, monospace",
   },
   fontWeights: {
-    thin: 200,
     body: 200,
   },
   lineHeights: {

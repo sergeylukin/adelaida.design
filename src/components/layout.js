@@ -9,7 +9,6 @@ import Link from './link'
 const Layout = ({ children }) => {
   return (
     <Container sx={{
-      minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
       position: 'relative',
@@ -23,11 +22,10 @@ const Layout = ({ children }) => {
       <footer
         sx={{
           fontSize: 1,
-          position: 'absolute',
+          position: 'fixed',
           bottom: 0,
           width: '100%',
           textAlign: 'center',
-          fontWeight: 'thin',
           display: 'flex',
           justifyContent: 'center',
         }}>
