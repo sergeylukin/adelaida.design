@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
         sx={{
           fontSize: 1,
           position: 'fixed',
+          left: 0,
           bottom: 0,
           width: '100%',
           textAlign: 'center',
