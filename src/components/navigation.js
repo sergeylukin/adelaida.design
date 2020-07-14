@@ -15,7 +15,7 @@ const Navigation = () => {
       <ul
         sx={{
           listStyleType: 'none',
-          fontSize: 4,
+          fontSize: [5, 6, null],
         }}>
         <li
           sx={{
