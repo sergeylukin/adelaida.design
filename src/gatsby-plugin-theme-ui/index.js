@@ -1,4 +1,7 @@
 export default {
+  breakpoints: [
+    '40em', '56em', '64em',
+  ],
   colors: {
     text: "#fff",
     background: "#cf011b",
@@ -6,14 +9,13 @@ export default {
     secondary: "#fff",
   },
   fonts: {
-    body: "system-ui, sans-serif",
-    heading: "system-ui, sans-serif",
+    body: "'Oswald', system-ui, sans-serif",
+    heading: "'Oswald', system-ui, sans-serif",
     monospace: "Menlo, monospace",
   },
   fontWeights: {
-    body: 400,
-    heading: 700,
-    bold: 700,
+    thin: 200,
+    body: 200,
   },
   lineHeights: {
     body: 1.5,
@@ -23,5 +25,12 @@ export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   sizes: {
     container: 1200,
-  }
+  },
+  styles: {
+    root: {
+      // uses the theme values provided above
+      fontFamily: 'body',
+      fontWeight: 'body',
+    },
+  },
 }

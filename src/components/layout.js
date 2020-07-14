@@ -2,8 +2,9 @@
 import { jsx } from 'theme-ui'
 import React from "react"
 import PropTypes from "prop-types"
-
 import { Container } from 'theme-ui'
+
+import Link from './link'
 
 const Layout = ({ children }) => {
   return (
@@ -16,17 +17,24 @@ const Layout = ({ children }) => {
       <main
         sx={{
           zIndex: 1,
+          display: 'flex',
+          flex: 1,
         }}>{children}</main>
       <footer
         sx={{
+          fontSize: 1,
           position: 'absolute',
-          bottom: 2,
+          bottom: 0,
           width: '100%',
           textAlign: 'center',
+          fontWeight: 'thin',
+          display: 'flex',
+          justifyContent: 'center',
         }}>
-        <a href="https://adelaida.design">adelaida.design</a>
-        {` `}
-        {new Date().getFullYear()}
+        <p><Link to="https://adelaida.design">adelaida.design</Link></p>
+        <p sx={{
+          ml: 2
+        }}>{new Date().getFullYear()}</p>
       </footer>
     </Container>
   )

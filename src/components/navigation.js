@@ -8,10 +8,14 @@ const Navigation = () => {
   return (
     <nav
       sx={{
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
       }}>
       <ul
         sx={{
           listStyleType: 'none',
+          fontSize: 4,
         }}>
         <li
           sx={{
@@ -24,16 +28,16 @@ const Navigation = () => {
         <li
           sx={{
             position: 'absolute',
-            right: 2,
+            right: [2, 3, 4],
             bottom: 2
-          }}><Link to="/about">About</Link></li>
+          }}><Link to="/contact">Contact</Link></li>
         <li
           sx={{
             position: 'absolute',
-            left: 2,
+            left: [2, 3, 4],
             bottom: 2,
           }}
-        ><Link to="/contact">Contact</Link></li>
+        ><Link to="/about">About</Link></li>
       </ul>
     </nav>
   )
