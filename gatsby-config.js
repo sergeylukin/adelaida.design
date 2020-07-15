@@ -19,12 +19,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `adelaida.design`,
+        name: `Adelaida - Graphic Designer`,
         short_name: `Adelaida`,
         start_url: `/`,
         background_color: `#cf011b`,
         theme_color: `#cf011b`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/adelaida-icon.png`, // This path is relative to the root of the site.
       },
     },
