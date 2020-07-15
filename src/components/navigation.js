@@ -1,17 +1,23 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import React from "react"
+import styled from '@emotion/styled'
+import { keyframes } from '@emotion/core'
 
 import Link from "./link"
 
+const flicker = keyframes`
+  0%  { opacity: 0; }
+  100%    { opacity: 1; }
+`;
+
+const FadedNav = styled.nav`
+  animation: ${flicker} 1s ease-in;
+`
+
 const Navigation = () => {
   return (
-    <nav
-      sx={{
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-      }}>
+    <FadedNav>
       <ul
         sx={{
           listStyleType: 'none',
@@ -39,7 +45,7 @@ const Navigation = () => {
           }}
         ><Link to="/about">About</Link></li>
       </ul>
-    </nav>
+    </FadedNav>
   )
 }
 
