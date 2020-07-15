@@ -35,7 +35,7 @@ function Logo() {
       <path
         stroke="#fff"
         className="myPath"
-        strokeWidth="18"
+        strokeWidth="12"
         d="M372.512 643.571H17.958S428.341 33.134 442.854 15.008c4.988-6.231 444.865 717.59 444.865 717.59H.607M229.914 484H526M439.711 171.773L731.343 647.81"
       ></path>
     </StyledLogo>
