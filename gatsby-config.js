@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#cf011b`,
         theme_color: `#cf011b`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/adelaida-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
