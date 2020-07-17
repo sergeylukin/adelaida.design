@@ -9,7 +9,7 @@ import Logo from "../components/logo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Adelaida - Graphic Designer" />
     <div
       sx={{
         position: 'fixed',
