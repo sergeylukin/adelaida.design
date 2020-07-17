@@ -26,7 +26,7 @@ const Navigation = () => {
         <li
           sx={{
             position: 'absolute',
-            top: 2,
+            top: 4,
             left: 0,
             width: '100%',
             textAlign: 'center',
@@ -35,13 +35,13 @@ const Navigation = () => {
           sx={{
             position: 'fixed',
             right: [2, 3, 4],
-            bottom: 2
+            bottom: 4
           }}><Link to="/contact">Contact</Link></li>
         <li
           sx={{
             position: 'fixed',
             left: [2, 3, 4],
-            bottom: 2,
+            bottom: 4,
           }}
         ><Link to="/about">About</Link></li>
       </ul>
