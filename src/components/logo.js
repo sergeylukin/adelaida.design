@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
 
@@ -17,19 +18,20 @@ const spin = keyframes({
   }
 })
 
-const StyledLogo = styled.svg`
-  fill: transparent;
-  .myPath {
-    animation: ${spin} 3s ease-in;
+const StyledLogo = styled.svg(props => ({
+  fill: 'transparent',
+  '.myPath': {
+    'animation': props.animation ? `${spin} 3s ease-in` : ''
   }
-`
+}))
 
 
-function Logo() {
+function Logo({ animation }) {
   return (
     <StyledLogo
       width="100%"
       viewBox="0 0 904 744"
+      animation={animation}
     >
       <path fill="#D0021B" d="M0 0H904V744H0z"></path>
       <path
@@ -40,6 +42,10 @@ function Logo() {
       ></path>
     </StyledLogo>
   );
+}
+
+Logo.propTypes = {
+  animation: PropTypes.boolean
 }
 
 export default Logo;

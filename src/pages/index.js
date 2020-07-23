@@ -25,7 +25,7 @@ const IndexPage = () => (
           width: '60%',
           maxWidth: '300px',
         }}>
-        <Logo />
+        <Logo animation />
       </div>
     </div>
     <Navigation />
