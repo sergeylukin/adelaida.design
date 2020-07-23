@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
-export default props =>
+let link = props =>
   <Link
     {...props}
     activeClassName='active'
@@ -13,3 +13,4 @@ export default props =>
       }
     }}
   />
+export default link
