@@ -43,7 +43,14 @@ const IndexPage = () => (
         }}>
         <p sx={{ pl: [null, null, 5], fontSize: 5, fontWeight: 100 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div sx={{ mx: [null, null, 5], mt: [null, null, 6] }}>
-          <img src={avatar} />
+          <img
+            sx={{
+              maxWidth: ['200px', null, '150px'],
+              filter: 'grayscale(100%)',
+              border: '1px solid white',
+              borderRadius: '50%'
+            }}
+            src={avatar} />
         </div>
         <p sx={{ pr: [null, null, 5], fontSize: 5, fontWeight: 100 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
