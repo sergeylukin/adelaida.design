@@ -1,16 +1,28 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import styled from '@emotion/styled'
+import { keyframes } from '@emotion/core'
 
 import Logo from "../components/logo"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Navigation from "../components/navigation"
+import Link from "../components/link"
 import avatar from "../images/avatar.jpg"
+
+const showUp = keyframes`
+  0%  { opacity: 0; }
+  100%    { opacity: 1; }
+`;
+
+const ShowUp = styled.nav`
+  animation: ${showUp} 1s ease-in;
+`;
 
 const IndexPage = () => (
   <Layout>
     <SEO title="About" />
-    <div
+    <ShowUp
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -28,21 +40,27 @@ const IndexPage = () => (
             width: '50%',
             maxWidth: '100px',
           }}>
-          <Logo />
+          <Link to="/"><Logo /></Link>
         </div>
       </div>
       <div
         sx={{
           mt: 3,
-          display: 'flex',
+          display: ['flex', null, 'grid'],
+          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr)',
           flexDirection: ['column', null, 'row'],
           justifyContent: 'center',
           textAlign: ['center', null, 'left'],
           px: [4, 2, 1],
           mb: 5,
         }}>
-        <p sx={{ pl: [null, null, 5], fontSize: 5, fontWeight: 100 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <div sx={{ mx: [null, null, 5], mt: [null, null, 6] }}>
+        <p sx={{ pl: [null, null, 5], fontSize: 5, fontWeight: 100 }}>
+          <p>{"Hi! :)"}</p>
+          <p>{"I'm Alina, a passionate graphic designer with an eye for colors from Tel Aviv"}</p>
+          <p>{"I'm  always looking for appropriate design language"}</p>
+          <p>{"Speaking fluent Figma & Sketch"}</p>
+        </p>
+        <div sx={{ mx: [null, null, 5], mt: [null, null, 6], textAlign: 'center' }}>
           <img
             sx={{
               maxWidth: ['200px', null, '150px'],
@@ -52,9 +70,10 @@ const IndexPage = () => (
             }}
             src={avatar} />
         </div>
-        <p sx={{ pr: [null, null, 5], fontSize: 5, fontWeight: 100 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p sx={{ pr: [null, null, 5], fontSize: 5, fontWeight: 100 }}>
+        </p>
       </div>
-    </div>
+    </ShowUp>
     <Navigation selected="about" />
   </Layout>
 )
