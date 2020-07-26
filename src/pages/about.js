@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import React from "react"
 
 import Logo from "../components/logo"
 import Layout from "../components/layout"

@@ -1,11 +1,5 @@
 {
   "parser": "babel-eslint",
-  "rules": {
-    "strict": 0,
-    "no-unused-vars": 1,
-    "react/jsx-uses-react": 1,
-    "react/jsx-uses-vars": 1
-  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended"
