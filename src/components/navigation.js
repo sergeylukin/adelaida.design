@@ -6,13 +6,13 @@ import { keyframes } from '@emotion/core'
 
 import Link from "./link"
 
-const flicker = keyframes`
+const showUp = keyframes`
   0%  { opacity: 0; }
   100%    { opacity: 1; }
 `;
 
 const FadedNav = styled.nav`
-  animation: ${flicker} 1s ease-in;
+  animation: ${showUp} 1s ease-in;
   position: absolute;
   width: 100%;
 `
@@ -41,7 +41,7 @@ const Navigation = ({ selected }) => {
               position: 'fixed',
               right: [3, null, 4],
               bottom: [3, null, 4]
-            }}><Link to="/contact">Contact</Link></li>
+            }}><Link to="/hire">Hire me!</Link></li>
         }
         {!selected && 
           <li
