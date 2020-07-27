@@ -54,8 +54,12 @@ const IndexPage = () => (
           mb: 5,
         }}>
         <p sx={{ pl: [null, null, 5], fontSize: 5, fontWeight: 100 }}>
-          <p>{"I'm looking for my next journey."}</p>
           <p>{"Let's work together! :)"}</p>
+          <p>
+            {"Have a one-time project? - order "}
+            <Link to="https://www.fiverr.com/adelaida_design" sx={{ textDecoration: 'underline' }}>{"my services on Fiverr!"}</Link>
+          </p>
+          <p>{"Looking for a full-time designer? Great, I'm looking for my dream job :)"}</p>
           <p><Link to="/cv.pdf" sx={{ textDecoration: 'underline' }}>{"Check out my CV"}</Link></p>
           <p>{"Whether you have a one-time project or a full-time position, I'd be glad to meet."}</p>
           <p>{"Feel free to contact me via "}<a href="mailto:contact@adelaida.design?subject=Job%20offer" sx={{textDecoration: 'underline',color: 'white'}}>contact@adelaida.design</a></p>
