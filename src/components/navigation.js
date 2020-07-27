@@ -15,6 +15,7 @@ const FadedNav = styled.nav`
   animation: ${showUp} 1s ease-in;
   position: absolute;
   width: 100%;
+  z-index: 2;
 `
 
 const Navigation = ({ selected }) => {
@@ -34,6 +35,29 @@ const Navigation = ({ selected }) => {
             width: '100%',
             textAlign: 'center',
           }}><Link to="/works">Works</Link></li>
+        }
+        {selected === 'works' && 
+          <li
+            sx={{
+              position: 'absolute',
+              top: [3, null, 4],
+              left: 0,
+              width: '100%',
+              display: 'flex',
+            }}
+          >
+            <Link to="/" sx={{ margin: 'auto' }}>
+            <div
+              sx={{
+                mb: 2,
+                width: 0,
+                height: 0,
+                borderLeft: '1.3rem solid transparent',
+                borderRight: '1.3rem solid transparent',
+                borderBottom: '2rem solid white'
+              }} />
+            </Link>
+          </li>
         }
         {!selected && 
           <li
