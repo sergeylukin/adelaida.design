@@ -63,7 +63,7 @@ const IndexPage = () => (
         <div sx={{ mx: [null, null, 5], mt: [null, null, 5], textAlign: 'center' }}>
           <img
             sx={{
-              maxWidth: ['200px', null, '150px'],
+              maxWidth: ['100px', null, '150px'],
               filter: 'grayscale(100%)',
               border: '1px solid white',
               borderRadius: '50%'

@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 import Navigation from "../components/navigation"
 import Link from "../components/link"
 import avatar from "../images/avatar.jpg"
+import { SocialLinks, SocialLink } from '../components/sociallinks'
 
 const showUp = keyframes`
   0%  { opacity: 0; }
@@ -46,32 +47,53 @@ const IndexPage = () => (
       <div
         sx={{
           mt: 3,
-          display: ['flex', null, 'grid'],
+          display: ['flex', null, 'flex'],
           gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr)',
           flexDirection: ['column', null, 'row'],
           justifyContent: 'center',
           textAlign: ['center', null, 'left'],
-          px: [4, 2, 1],
+          px: [4, 2, 4],
           mb: 5,
         }}>
-        <p sx={{ pl: [null, null, 5], fontSize: 5, fontWeight: 100 }}>
+        <SocialLinks
+          sx={{
+            pt: [null, null, 7],
+            order: [2, null, 1],
+          }}>
+          <SocialLink><Link to="https://instagram.com/adelaida_design">Instagram</Link></SocialLink>
+          <SocialLink
+            sx={{
+              mt: [2, null, 4]
+            }}><Link to="https://twitter.com/adelaida_design">Twitter</Link></SocialLink>
+        </SocialLinks>
+        <p sx={{ px: [null, null, 6], order: [1, null, 2], fontSize: 5, fontWeight: 100 }}>
+          <div sx={{ mx: [null, null, 5], textAlign: 'center' }}>
+            <img
+              sx={{
+                maxWidth: ['100px', null, '150px'],
+                filter: 'grayscale(100%)',
+                border: '1px solid white',
+                borderRadius: '50%'
+              }}
+              src={avatar} />
+          </div>
           <p>{"Hi! :)"}</p>
           <p>{"I'm Alina, a passionate graphic designer with an eye for colors from Tel Aviv"}</p>
           <p>{"I'm  always looking for appropriate design language"}</p>
           <p>{"Speaking fluent Figma & Sketch"}</p>
         </p>
-        <div sx={{ mx: [null, null, 5], mt: [null, null, 6], textAlign: 'center' }}>
-          <img
+        <SocialLinks
+          sx={{
+            pt: [2, null, 7],
+            order: [3, null, null],
+          }}
+        >
+          <SocialLink><Link to="https://www.behance.net/adelaida_design">Behance</Link></SocialLink>
+          <SocialLink
             sx={{
-              maxWidth: ['200px', null, '150px'],
-              filter: 'grayscale(100%)',
-              border: '1px solid white',
-              borderRadius: '50%'
-            }}
-            src={avatar} />
-        </div>
-        <p sx={{ pr: [null, null, 5], fontSize: 5, fontWeight: 100 }}>
-        </p>
+              mt: [2, null, 4]
+            }}><Link to="https://dribbble.com/adelaida_design">Dribbble</Link></SocialLink>
+        </SocialLinks>
       </div>
     </ShowUp>
     <Navigation selected="about" />
