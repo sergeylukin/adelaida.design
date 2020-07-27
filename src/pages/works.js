@@ -10,14 +10,24 @@ import SEO from '../components/seo';
 import Navigation from '../components/navigation';
 import Link from '../components/link';
 import avatar from "../images/avatar.jpg"
+import workSergeylukinUI from "../images/work-sergeylukin-ui.png"
+import workSergeylukinLogo from "../images/work-sergeylukin-logo.png"
+import workAdelaidaLogo from "../images/work-adelaida-logo.png"
+import workQuotesLogo from "../images/work-quotes-logo.png"
+import workEnlivenedLogo from "../images/work-enlivened-logo.png"
+import workYayUI from "../images/work-yay-ui.png"
+import workPretendyLogo from "../images/work-pretendy-logo.png"
+import workSolelozLogo from "../images/work-soleloz-logo.png"
 
 const cards = [
-  avatar,
-  'https://upload.wikimedia.org/wikipedia/en/5/53/RWS_Tarot_16_Tower.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/9/9b/RWS_Tarot_07_Chariot.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/d/db/RWS_Tarot_06_Lovers.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/d/de/RWS_Tarot_01_Magician.jpg'
+  workPretendyLogo,
+  workEnlivenedLogo,
+  workSergeylukinUI,
+  workSergeylukinLogo,
+  workYayUI,
+  workSolelozLogo,
+  workQuotesLogo,
+  workAdelaidaLogo,
 ]
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
