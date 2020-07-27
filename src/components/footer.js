@@ -1,20 +1,15 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-import Link from './link'
-
 const Footer = () => {
   return (
       <footer
         sx={{
-          fontSize: 1,
+          fontSize: 2,
           display: 'flex',
           justifyContent: 'center',
         }}>
-        <p><Link to="https://adelaida.design">adelaida.design</Link></p>
-        <p sx={{
-          ml: 2
-        }}>{new Date().getFullYear()}</p>
+        <p>Simple is beautiful!</p>
       </footer>
   )
 }
