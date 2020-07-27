@@ -72,7 +72,7 @@ const IndexPage = () => (
         </div>
       </div>
     </ShowUp>
-    <Navigation selected="about" />
+    <Navigation selected="hire" />
   </Layout>
 )
 

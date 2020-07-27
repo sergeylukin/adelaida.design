@@ -43,6 +43,28 @@ const Navigation = ({ selected }) => {
               bottom: [3, null, 4]
             }}><Link to="/hire">Hire me!</Link></li>
         }
+        {selected === 'hire' && 
+          <li
+            sx={{
+              position: 'fixed',
+              right: [3, null, 4],
+              bottom: [3, null, 4],
+            }}
+          >
+            <Link to="/">
+            <div
+              sx={{
+                mr: [2, null, 4], // TODO: replace this with more generic solution
+                mb: 2,
+                width: 0,
+                height: 0,
+                borderLeft: '1.3rem solid transparent',
+                borderRight: '1.3rem solid transparent',
+                borderBottom: '2rem solid white'
+              }} />
+            </Link>
+          </li>
+        }
         {!selected && 
           <li
             sx={{
