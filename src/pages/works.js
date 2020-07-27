@@ -9,7 +9,6 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Navigation from '../components/navigation';
 import Link from '../components/link';
-import Logo from '../components/Logo';
 import avatar from "../images/avatar.jpg"
 
 const cards = [
@@ -57,22 +56,6 @@ function Deck() {
 const Works = () => (
   <Layout>
     <SEO title="Works" />
-    <div
-      sx={{
-        display: 'none',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
-        zIndex: 2,
-      }}>
-      <div
-        sx={{
-          width: '50%',
-          maxWidth: '100px',
-        }}>
-        <Link to="/"><Logo /></Link>
-      </div>
-    </div>
     <Navigation selected='works' />
     <div
       sx={{
