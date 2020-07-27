@@ -44,11 +44,19 @@ const IndexPage = () => (
           <Link to="/"><Logo /></Link>
         </div>
       </div>
+      <div sx={{ mt: 5, textAlign: 'center' }}>
+        <img
+          sx={{
+            maxWidth: ['100px', null, '150px'],
+            filter: 'grayscale(100%)',
+            border: '1px solid white',
+            borderRadius: '50%'
+          }}
+          src={avatar} />
+      </div>
       <div
         sx={{
-          mt: 3,
-          display: ['flex', null, 'flex'],
-          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr)',
+          display: 'flex',
           flexDirection: ['column', null, 'row'],
           justifyContent: 'center',
           textAlign: ['center', null, 'left'],
@@ -57,7 +65,7 @@ const IndexPage = () => (
         }}>
         <SocialLinks
           sx={{
-            pt: [null, null, 7],
+            pt: [null, null, 5],
             order: [2, null, 1],
           }}>
           <SocialLink><Link to="https://instagram.com/adelaida_design">Instagram</Link></SocialLink>
@@ -67,24 +75,15 @@ const IndexPage = () => (
             }}><Link to="https://twitter.com/adelaida_design">Twitter</Link></SocialLink>
         </SocialLinks>
         <p sx={{ px: [null, null, 6], order: [1, null, 2], fontSize: 5, fontWeight: 100 }}>
-          <div sx={{ mx: [null, null, 5], textAlign: 'center' }}>
-            <img
-              sx={{
-                maxWidth: ['100px', null, '150px'],
-                filter: 'grayscale(100%)',
-                border: '1px solid white',
-                borderRadius: '50%'
-              }}
-              src={avatar} />
-          </div>
-          <p>{"Hi! :)"}</p>
-          <p>{"I'm Alina, a passionate graphic designer with an eye for colors from Tel Aviv"}</p>
+          <p>{"Hello! I'm Alina, a mother for my lovely son and a passionate graphic designer with an eye for colors and simplicity from Tel Aviv - nice to meet you! :)"}</p>
           <p>{"I'm  always looking for appropriate design language"}</p>
           <p>{"Speaking fluent Figma & Sketch"}</p>
+          <p>{"Feel free to say hi via "}<a href="mailto:contact@adelaida.design?subject=Hi!" sx={{textDecoration: 'underline',color: 'white'}}>contact@adelaida.design</a></p>
+          <p><Link to="/cv.pdf" sx={{ textDecoration: 'underline' }}>{"Download my CV"}</Link></p>
         </p>
         <SocialLinks
           sx={{
-            pt: [2, null, 7],
+            pt: [2, null, 5],
             order: [3, null, null],
           }}
         >
