@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `adelaida.design`,
-    description: `Hi, nice to meet you! My name is Adelaida. I am graphic designer in all verticals`,
+    description: `Hi, I'm Alina, graphic designer - welcome to my personal website!`,
     author: `@adelaida_design`,
   },
   plugins: [
