@@ -87,12 +87,13 @@ const Works = () => (
 
         '> div > div': {
           backgroundColor: 'white',
-          backgroundSize: 'auto 85%',
+          backgroundSize: ['auto 75%', null, 'auto 85%'],
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center center',
-          width: ['60vw', null, '45vh'],
+          width: ['55vw', null, '45vh'],
           maxWidth: '300px',
-          height: ['80vw', null, '85vh'],
+          minWidth: '200px',
+          height: ['65vh', null, '85vh'],
           maxHeight: '570px',
           willChange: 'transform',
           borderRadius: '10px',
