@@ -1,7 +1,8 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+/* eslint-disable */
+const React = require("react")
 
-// You can delete this file if you're not using it
+const ReturningVisitorProvider = require('./src/hooks/isReturningVisitorProvider').default
+
+exports.wrapPageElement = ({ element, props }) => {
+  return <ReturningVisitorProvider {...props}>{element}</ReturningVisitorProvider>
+}
