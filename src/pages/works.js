@@ -20,14 +20,14 @@ import workPretendyLogo from "../images/work-pretendy-logo.png"
 import workSolelozLogo from "../images/work-soleloz-logo.png"
 
 const cards = [
-  workPretendyLogo,
-  workEnlivenedLogo,
-  workSergeylukinUI,
-  workSergeylukinLogo,
-  workYayUI,
-  workSolelozLogo,
-  workQuotesLogo,
-  workAdelaidaLogo,
+  {src: workPretendyLogo, bg: 'white'},
+  {src: workEnlivenedLogo, bg: 'black'},
+  {src: workSergeylukinUI, bg: 'white'},
+  {src: workSergeylukinLogo, bg: 'white'},
+  {src: workYayUI, bg: 'white'},
+  {src: workSolelozLogo, bg: 'white'},
+  {src: workQuotesLogo, bg: 'white'},
+  {src: workAdelaidaLogo, bg: '#cf011b'},
 ]
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
@@ -58,7 +58,7 @@ function Deck() {
   return props.map(({ x, y, rot, scale }, i) => (
     <animated.div key={i} style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
       {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-      <animated.div {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundImage: `url(${cards[i]})` }} />
+      <animated.div {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundColor: cards[i].bg, backgroundImage: `url(${cards[i].src})` }} />
     </animated.div>
   ))
 }
