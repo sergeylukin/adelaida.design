@@ -68,11 +68,11 @@ const IndexPage = () => (
             pt: [null, null, 5],
             order: [2, null, 1],
           }}>
-          <SocialLink><Link to="https://instagram.com/adelaida_design">Instagram</Link></SocialLink>
+          <SocialLink><a href="https://instagram.com/adelaida_design">Instagram</a></SocialLink>
           <SocialLink
             sx={{
               mt: [2, null, 4]
-            }}><Link to="https://twitter.com/adelaida_design">Twitter</Link></SocialLink>
+            }}><a href="https://twitter.com/adelaida_design">Twitter</a></SocialLink>
         </SocialLinks>
         <p sx={{ px: [null, null, 6], order: [1, null, 2], fontSize: 5, fontWeight: 100 }}>
           <p>{"Hello! I'm Alina, a mother for my lovely son and a passionate graphic designer with an eye for colors and simplicity from Tel Aviv - nice to meet you! :)"}</p>
@@ -87,11 +87,11 @@ const IndexPage = () => (
             order: [3, null, null],
           }}
         >
-          <SocialLink><Link to="https://www.behance.net/adelaida_design">Behance</Link></SocialLink>
+          <SocialLink><a href="https://www.behance.net/adelaida_design">Behance</a></SocialLink>
           <SocialLink
             sx={{
               mt: [2, null, 4]
-            }}><Link to="https://dribbble.com/adelaida_design">Dribbble</Link></SocialLink>
+            }}><a href="https://dribbble.com/adelaida_design">Dribbble</a></SocialLink>
         </SocialLinks>
       </div>
     </ShowUp>
