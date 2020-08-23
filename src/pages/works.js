@@ -170,14 +170,15 @@ const Works = () => {
         <div sx={{
           height: '100vh',
           width: '100vw',
-          textAlign: 'center',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}>
           <a sx={{
             color: theme.colors.primary,
             fontSize: [5, 6, null],
             position: 'fixed',
             bottom: 2,
-            marginLeft: '-45px',
             cursor: 'default',
             zIndex: 5,
           }}
