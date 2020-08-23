@@ -1,9 +1,11 @@
 /* eslint-disable */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, Box } from 'theme-ui';
 import { useState } from 'react'
 import { useSprings, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
+import { keyframes } from '@emotion/core'
+import styled from '@emotion/styled'
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -29,6 +31,39 @@ const cards = [
   {src: workQuotesLogo, bg: 'white'},
   {src: workAdelaidaLogo, bg: '#cf011b'},
 ]
+
+const swipe = keyframes({
+  '0%': {
+    translateX: '160px',
+  },
+  '20%': {
+    translateX: '160px',
+  },
+  '100%': {
+    translateX: '0',
+  }
+})
+
+const circles = keyframes({
+  '0%': {
+    opacity: 0,
+  },
+  '33%%': {
+    opacity: 1,
+  },
+  '100%': {
+    opacity: 0,
+  }
+})
+
+const SwipeHint = styled.div({
+  border: '5px solid blue',
+  borderRadius: '50%',
+  marginTop: '5px',
+  height: '30px',
+  width: '30px',
+  'animation': `${swipe} 1.25s ease-out infinite, ${circles} 1.25s ease-out infinite`,
+})
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = i => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
@@ -100,6 +135,18 @@ const Works = () => (
           boxShadow: '0 12.5px 100px -10px rgba(0, 0, 0, 0.2), 0 10px 10px -10px rgba(0, 0, 0, 0.3)',
         }
       }}>
+      <Box sx={{
+        position: 'absolute',
+        marginLeft: '-100px',
+        marginTop: '-15px',
+        background: 'red',
+        left: '50%',
+        top: '50%',
+        width: '200px',
+        height: '50px',
+      }}>
+      <SwipeHint />
+    </Box>
       <Deck />
     </div>
   </Layout>
