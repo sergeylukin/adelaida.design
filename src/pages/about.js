@@ -38,14 +38,14 @@ const IndexPage = () => (
           textAlign: ['center', null, 'left'],
           mb: 5,
           }}>
-          <p sx={{ pl: [null, null, 5], fontSize: 5, fontWeight: 100, lineHeight: 1.5, }}>
+          <p sx={{ order: [2, null, 1], pl: [null, null, 5], fontSize: 5, fontWeight: 100, lineHeight: 1.5, }}>
             <p>{"Hello! I'm Alina, a mother for my lovely son and a passionate graphic designer with an eye for colors and simplicity from Tel Aviv - nice to meet you! :)"}</p>
             <p>{"I'm  always looking for appropriate design language"}</p>
             <p>{"Speaking fluent Figma & Sketch"}</p>
             <p>{"Feel free to say hi via "}<a href="mailto:contact@adelaida.design?subject=Hi!" sx={{textDecoration: 'underline', color: 'primary'}}>contact@adelaida.design</a></p>
             <p><Link to="/cv.pdf" sx={{ textDecoration: 'underline', color: 'primary' }}>{"Download my CV"}</Link></p>
           </p>
-          <div sx={{ mx: [null, null, 5], mt: [null, null, 5], textAlign: 'center' }}>
+          <div sx={{ order: [1, null, 2], mx: [null, null, 5], mt: 5, textAlign: 'center' }}>
             <img
               sx={{
                 maxWidth: ['100px', null, '150px'],
