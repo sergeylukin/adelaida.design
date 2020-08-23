@@ -1,6 +1,6 @@
 /* eslint-disable */
 /** @jsx jsx */
-import { jsx, Box } from 'theme-ui';
+import { jsx, useThemeUI, Box } from 'theme-ui';
 import { useState } from 'react'
 import { useSprings, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
@@ -34,13 +34,13 @@ const cards = [
 
 const swipe = keyframes({
   '0%': {
-    translateX: '160px',
+     transform: 'translateX(160px)',
   },
   '20%': {
-    translateX: '160px',
+     transform: 'translateX(160px)',
   },
   '100%': {
-    translateX: '0',
+     transform: 'translateX(0)',
   }
 })
 
@@ -48,7 +48,7 @@ const circles = keyframes({
   '0%': {
     opacity: 0,
   },
-  '33%%': {
+  '33%': {
     opacity: 1,
   },
   '100%': {
@@ -56,14 +56,14 @@ const circles = keyframes({
   }
 })
 
-const SwipeHint = styled.div({
-  border: '5px solid blue',
+const SwipeHint = styled.div(props => ({
+  border: '2px solid ' + (props.color ? props.color : '#aae'),
   borderRadius: '50%',
-  marginTop: '5px',
+  marginTop: '100px',
   height: '30px',
   width: '30px',
   'animation': `${swipe} 1.25s ease-out infinite, ${circles} 1.25s ease-out infinite`,
-})
+}))
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = i => ({ x: 0, y: i * -4, scale: 1, rot: -10 + Math.random() * 20, delay: i * 100 })
@@ -71,11 +71,12 @@ const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
-function Deck() {
+function Deck({ onGesture }) {
   const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
   const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from(i) })) // Create a bunch of springs using the helpers above
   // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
   const bind = useGesture(({ args: [index], down, delta: [xDelta], distance, direction: [xDir], velocity }) => {
+    onGesture(true)
     const trigger = velocity > 0.2 // If you flick hard enough it should trigger the card to fly out
     const dir = xDir < 0 ? -1 : 1 // Direction should either point left or right
     if (!down && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
@@ -91,65 +92,71 @@ function Deck() {
   })
   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
   return props.map(({ x, y, rot, scale }, i) => (
-    <animated.div key={i} style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
+    <animated.div key={i} className="card" style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
       {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
       <animated.div {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundColor: cards[i].bg, backgroundImage: `url(${cards[i].src})` }} />
     </animated.div>
   ))
 }
 
-const Works = () => (
-  <Layout>
-    <SEO title="Works" />
-    <Navigation selected='works' />
-    <div
-      sx={{
-        position: 'fixed',
-        overflow: 'hidden',
-        width: '100%',
-        height: '100%',
-        left: '-1%',
-        zIndex: 1,
-        '> div': {
-          position: 'absolute',
-          width: '100vw',
-          height: '100vh',
-          willChange: 'transform',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        },
+const Works = () => {
+  const context = useThemeUI()
+  const { theme } = context
+  const [didGesture, setGesture] = useState(false);
+  return (
+    <Layout>
+      <SEO title="Works" />
+      <Navigation selected='works' />
+      <div
+        sx={{
+          position: 'fixed',
+          overflow: 'hidden',
+          width: '100%',
+          height: '100%',
+          left: '-1%',
+          zIndex: 1,
+          '> div.card': {
+            position: 'absolute',
+            width: '100vw',
+            height: '100vh',
+            willChange: 'transform',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          },
 
-        '> div > div': {
-          backgroundColor: 'white',
-          backgroundSize: ['auto 75%', null, 'auto 85%'],
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center center',
-          width: ['55vw', null, '45vh'],
-          maxWidth: '300px',
-          minWidth: '200px',
-          height: ['60vh', null, '85vh'],
-          maxHeight: '470px',
-          willChange: 'transform',
-          borderRadius: '10px',
-          boxShadow: '0 12.5px 100px -10px rgba(0, 0, 0, 0.2), 0 10px 10px -10px rgba(0, 0, 0, 0.3)',
-        }
-      }}>
-      <Box sx={{
-        position: 'absolute',
-        marginLeft: '-100px',
-        marginTop: '-15px',
-        background: 'red',
-        left: '50%',
-        top: '50%',
-        width: '200px',
-        height: '50px',
-      }}>
-      <SwipeHint />
-    </Box>
-      <Deck />
-    </div>
-  </Layout>
-);
+          '> div.card > div': {
+            backgroundColor: 'white',
+            backgroundSize: ['auto 75%', null, 'auto 85%'],
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            width: ['55vw', null, '45vh'],
+            maxWidth: '300px',
+            minWidth: '200px',
+            height: ['60vh', null, '85vh'],
+            maxHeight: '470px',
+            willChange: 'transform',
+            borderRadius: '10px',
+            boxShadow: '0 12.5px 100px -10px rgba(0, 0, 0, 0.2), 0 10px 10px -10px rgba(0, 0, 0, 0.3)',
+          }
+        }}>
+        <Deck onGesture={(val) => { setGesture(val) }} />
+        <Box sx={{
+          display: didGesture ? 'none' : 'block',
+          position: 'absolute',
+          marginLeft: '-100px',
+          marginTop: '-15px',
+          background: 'fff',
+          left: '50%',
+          top: '50%',
+          width: '200px',
+          height: '50px',
+        }}>
+          <SwipeHint color={'white'} />
+        </Box>
+      </div>
+    </Layout>
+  )
+}
 
 export default Works;
