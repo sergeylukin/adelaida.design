@@ -22,10 +22,20 @@ const IndexPage = () => (
     <SEO title="Hire me" />
     <ShowUp>
       <div sx={{
-        display: 'grid',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         minHeight: '100vh',
-        placeItems: 'center',
       }}>
+      <div 
+        sx={{
+          mt: 3,
+          display: ['flex', null, null],
+          flexDirection: ['column', null, 'row'],
+          justifyContent: 'center',
+          textAlign: ['center', null, 'left'],
+          mb: 5,
+        }}>
           <p sx={{ pl: [null, null, 5], fontSize: 5, fontWeight: 100 }}>
             <p>{"Let's work together! :)"}</p>
             <p>
@@ -39,6 +49,7 @@ const IndexPage = () => (
             <p>{"Whether you have a one-time project or a full-time position, I'd be glad to meet."}</p>
             <p>{"Feel free to contact me via "}<a href="mailto:contact@adelaida.design?subject=Job%20offer" sx={{textDecoration: 'underline',color: 'primary'}}>contact@adelaida.design</a></p>
           </p>
+        </div>
       </div>
     </ShowUp>
     <Navigation selected="hire" />

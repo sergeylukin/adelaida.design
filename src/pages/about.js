@@ -31,12 +31,12 @@ const IndexPage = () => (
       }}>
         <div
           sx={{
-            mt: 3,
-            display: ['flex', null, null],
-            flexDirection: ['column', null, 'row'],
-            justifyContent: 'center',
-            textAlign: ['center', null, 'left'],
-            px: [4, 2, 1],
+          mt: 3,
+          display: ['flex', null, null],
+          flexDirection: ['column', null, 'row'],
+          justifyContent: 'center',
+          textAlign: ['center', null, 'left'],
+          mb: 5,
           }}>
           <p sx={{ pl: [null, null, 5], fontSize: 5, fontWeight: 100, lineHeight: 1.5, }}>
             <p>{"Hello! I'm Alina, a mother for my lovely son and a passionate graphic designer with an eye for colors and simplicity from Tel Aviv - nice to meet you! :)"}</p>
@@ -59,8 +59,10 @@ const IndexPage = () => (
         <div
           sx={{
             display: 'grid',
+            flexDirection: 'column',
             placeItems: 'center',
-            pt: [6, 5, null],
+            pt: [2, 5, null],
+            pb: 4,
           }}>
           <SocialLinks>
             <SocialLink><a href="https://instagram.com/adelaida_design" sx={{color: 'primary'}}>Instagram</a></SocialLink>

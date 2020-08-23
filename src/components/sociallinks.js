@@ -10,7 +10,7 @@ export const SocialLinks = props => (
       whiteSpace: 'nowrap',
       listStyle: 'none',
       display: 'flex',
-      flexDirection: 'row',
+      flexDirection: ['column', 'row', null],
       justifyContent: 'space-between',
       lignItems: 'center',
       pl: 0,
@@ -24,6 +24,7 @@ export const SocialLink = props => (
     {...props}
     sx={{
       px: 2,
+      display: ['block', 'inline', null],
       "a": {
         textDecoration: ['underline', null, 'none'],
       }
