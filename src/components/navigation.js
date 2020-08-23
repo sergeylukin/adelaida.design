@@ -37,6 +37,7 @@ const Navigation = ({ selected }) => {
             left: 0,
             width: '100%',
             textAlign: 'center',
+            color: 'primary',
           }}><Link to="/works">Works</Link></li>
         }
         {selected === 'works' && 
@@ -67,7 +68,8 @@ const Navigation = ({ selected }) => {
             sx={{
               position: 'fixed',
               right: [3, null, 4],
-              bottom: [3, null, 4]
+              bottom: [3, null, 4],
+              color: 'primary',
             }}><Link to="/hire">Hire me!</Link></li>
         }
         {selected === 'hire' && 
@@ -98,6 +100,7 @@ const Navigation = ({ selected }) => {
               position: 'fixed',
               left: [3, null, 4],
               bottom: [3, null, 4],
+              color: 'primary',
             }}
           ><Link to="/about">About</Link></li>
         }
