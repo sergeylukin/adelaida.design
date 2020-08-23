@@ -24,6 +24,7 @@ export const SocialLink = props => (
     {...props}
     sx={{
       px: 2,
+      py: [2, 0, null],
       display: ['block', 'inline', null],
       "a": {
         textDecoration: ['underline', null, 'none'],
