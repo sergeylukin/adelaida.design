@@ -97,7 +97,7 @@ const Works = () => (
           maxHeight: '470px',
           willChange: 'transform',
           borderRadius: '10px',
-          boxShadow: '0 12.5px 100px -10px rgba(244, 67, 54, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3)',
+          boxShadow: '0 12.5px 100px -10px rgba(0, 0, 0, 0.2), 0 10px 10px -10px rgba(0, 0, 0, 0.3)',
         }
       }}>
       <Deck />

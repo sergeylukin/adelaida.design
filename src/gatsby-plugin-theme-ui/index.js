@@ -3,8 +3,8 @@ export default {
     '40em', '56em', '64em',
   ],
   colors: {
-    text: "#fff",
-    background: "#cf011b",
+    text: "#cf011b",
+    background: "#fff", // cf011b
     primary: "#cf011b",
     secondary: "#fff",
   },

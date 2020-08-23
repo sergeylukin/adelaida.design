@@ -22,25 +22,25 @@ const spin = keyframes({
 const StyledLogo = styled.svg(props => ({
   fill: 'transparent',
   '.myPath': {
-    'animation': props.animation ? `${spin} 3s ease-in` : '',
+    'animation': props.animateIt ? `${spin} 3s ease-in` : '',
   }
 }))
 
 
-function Logo({ animation }) {
+function Logo({ animateIt }) {
   const props = useSpring({config: { duration: 1000 }, opacity: 1, from: {opacity: 0}})
   return (
     <animated.div style={props}>
       <StyledLogo
         width="100%"
         viewBox="0 0 904 744"
-        animation={animation}
+        animateIt={animateIt}
       >
-        <path fill="#D0021B" d="M0 0H904V744H0z"></path>
+        <path fill="#fff" d="M0 0H904V744H0z"></path>
         <path
-          stroke="#fff"
+          stroke="#cf011b"
           className="myPath"
-          strokeWidth="7"
+          strokeWidth="15"
           d="M372.512 643.571H17.958S428.341 33.134 442.854 15.008c4.988-6.231 444.865 717.59 444.865 717.59H.607M229.914 484H526M439.711 171.773L731.343 647.81"
         ></path>
       </StyledLogo>
@@ -49,7 +49,7 @@ function Logo({ animation }) {
 }
 
 Logo.propTypes = {
-  animation: PropTypes.boolean
+  animateIt: PropTypes.bool
 }
 
 export default Logo;

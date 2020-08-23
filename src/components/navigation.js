@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui'
 import PropTypes from "prop-types"
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
+import { useThemeUI } from 'theme-ui'
 
 import Link from "./link"
 
@@ -19,6 +20,8 @@ const FadedNav = styled.nav`
 `
 
 const Navigation = ({ selected }) => {
+  const context = useThemeUI()
+  const { theme } = context
   return (
     <FadedNav>
       <ul
@@ -54,7 +57,7 @@ const Navigation = ({ selected }) => {
                 height: 0,
                 borderLeft: '1.3rem solid transparent',
                 borderRight: '1.3rem solid transparent',
-                borderBottom: '2rem solid white'
+                borderBottom: `2rem solid ${theme.colors.primary}`
               }} />
             </Link>
           </li>
@@ -84,7 +87,7 @@ const Navigation = ({ selected }) => {
                 height: 0,
                 borderLeft: '1.3rem solid transparent',
                 borderRight: '1.3rem solid transparent',
-                borderBottom: '2rem solid white'
+                borderBottom: `2rem solid ${theme.colors.primary}`
               }} />
             </Link>
           </li>
@@ -115,7 +118,7 @@ const Navigation = ({ selected }) => {
                 height: 0,
                 borderLeft: '1.3rem solid transparent',
                 borderRight: '1.3rem solid transparent',
-                borderBottom: '2rem solid white'
+                borderBottom: `2rem solid ${theme.colors.primary}`
               }} />
             </Link>
           </li>

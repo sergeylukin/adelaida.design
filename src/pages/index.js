@@ -38,7 +38,7 @@ const IndexPage = () => (
               width: '60%',
               maxWidth: '300px',
             }}>
-            <Logo animation={!context.isReturningVisitor} />
+            <Logo animateIt={!context.isReturningVisitor} />
           </div>
         </div>
         <Navigation />
