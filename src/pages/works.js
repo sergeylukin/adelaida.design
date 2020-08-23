@@ -177,6 +177,7 @@ const Works = () => {
           <a sx={{
             color: theme.colors.primary,
             fontSize: [5, 6, null],
+            fontWeight: '500',
             position: 'fixed',
             bottom: 2,
             cursor: 'default',
