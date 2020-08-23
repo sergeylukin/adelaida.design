@@ -38,7 +38,7 @@ const IndexPage = () => (
             textAlign: ['center', null, 'left'],
             px: [4, 2, 1],
           }}>
-          <p sx={{ pl: [null, null, 5], fontSize: 5, fontWeight: 100 }}>
+          <p sx={{ pl: [null, null, 5], fontSize: 5, fontWeight: 100, lineHeight: 1.5, }}>
             <p>{"Hello! I'm Alina, a mother for my lovely son and a passionate graphic designer with an eye for colors and simplicity from Tel Aviv - nice to meet you! :)"}</p>
             <p>{"I'm  always looking for appropriate design language"}</p>
             <p>{"Speaking fluent Figma & Sketch"}</p>
