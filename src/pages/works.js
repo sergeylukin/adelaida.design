@@ -71,15 +71,26 @@ const from = () => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
-function Deck({ onGesture }) {
-  const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
+const Works = () => {
+  const context = useThemeUI()
+  const { theme } = context
+  const [didGesture, setGesture] = useState(false);
+  const [lastInsertedIndex, setLastInsertedIndex] = useState(null)
+
+  var [gone,updateGone] = useState(() => new Set()) // The set flags all the cards that are flicked out
+  var [myArr, setMyArr] = useState([])
   const [props, set] = useSprings(cards.length, i => ({ ...to(i), from: from(i) })) // Create a bunch of springs using the helpers above
   // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
   const bind = useGesture(({ args: [index], down, delta: [xDelta], distance, direction: [xDir], velocity }) => {
-    onGesture(true)
+    setGesture(true)
     const trigger = velocity > 0.2 // If you flick hard enough it should trigger the card to fly out
     const dir = xDir < 0 ? -1 : 1 // Direction should either point left or right
-    if (!down && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
+
+    if (!down && trigger) {
+      gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
+      setLastInsertedIndex(index)
+      setMyArr([...myArr, index])
+    }
     set(i => {
       if (index !== i) return // We're only interested in changing spring-data for the current spring
       const isGone = gone.has(index)
@@ -88,21 +99,16 @@ function Deck({ onGesture }) {
       const scale = down ? 1.1 : 1 // Active cards lift up a bit
       return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } }
     })
-    if (!down && gone.size === cards.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)
+    if (!down && gone.size === cards.length) setTimeout(() => {
+      gone.clear() || set(i => to(i))
+      setMyArr([])
+    }, 600)
   })
   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
-  return props.map(({ x, y, rot, scale }, i) => (
-    <animated.div key={i} className="card" style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
-      {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-      <animated.div {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundColor: cards[i].bg, backgroundImage: `url(${cards[i].src})` }} />
-    </animated.div>
-  ))
-}
 
-const Works = () => {
-  const context = useThemeUI()
-  const { theme } = context
-  const [didGesture, setGesture] = useState(false);
+
+
+
   return (
     <Layout>
       <SEO title="Works" />
@@ -140,7 +146,12 @@ const Works = () => {
             boxShadow: '0 12.5px 100px -10px rgba(0, 0, 0, 0.2), 0 10px 10px -10px rgba(0, 0, 0, 0.3)',
           }
         }}>
-        <Deck onGesture={(val) => { setGesture(val) }} />
+        {props.map(({ x, y, rot, scale }, i) => (
+          <animated.div key={i} className="card" style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
+            {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
+            <animated.div {...bind(i)} style={{ transform: interpolate([rot, scale], trans), backgroundColor: cards[i].bg, backgroundImage: `url(${cards[i].src})` }} />
+          </animated.div>
+        ))}
         <Box sx={{
           display: didGesture ? 'none' : 'block',
           position: 'absolute',
@@ -155,6 +166,34 @@ const Works = () => {
           <SwipeHint color={'white'} />
         </Box>
       </div>
+      {myArr.length > 0 && (
+        <div sx={{
+          height: '100vh',
+          width: '100vw',
+          textAlign: 'center',
+        }}>
+          <a sx={{
+            color: theme.colors.primary,
+            fontSize: 6,
+            position: 'fixed',
+            bottom: 2,
+            marginLeft: '-45px',
+            cursor: 'default',
+            zIndex: 5,
+          }}
+            onClick={() => {
+              if (myArr.length === 0) return
+              let lastEl = myArr[myArr.length-1]
+              setMyArr([...myArr.slice(0, -1)])
+              gone.delete(lastEl)
+              updateGone(() => gone)
+              set(i => {
+                if (lastEl !== i) return
+                return to(i)
+              })
+          }}>Undo</a>
+        </div>
+      )}
     </Layout>
   )
 }
