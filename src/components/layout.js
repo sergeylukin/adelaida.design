@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import PropTypes from "prop-types"
 import { Container } from 'theme-ui'
-import 'typeface-yanone-kaffeesatz'
+import '../fonts.css';
 
 const Layout = ({ children }) => {
   return (
