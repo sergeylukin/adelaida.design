@@ -11,8 +11,8 @@ let link = props =>
         activeClassName='active'
         onClick={() => context.setReturningVisitor()}
         sx={{
-          color: 'inherit',
           textDecoration: 'none',
+          color: 'inherit',
           '&.active': {
             textDecoration: 'underline',
           }

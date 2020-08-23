@@ -26,6 +26,9 @@ export default {
     container: 1200,
   },
   styles: {
+    a: {
+      color: 'primary',
+    },
     root: {
       // uses the theme values provided above
       fontFamily: 'body',

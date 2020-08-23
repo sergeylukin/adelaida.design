@@ -68,18 +68,18 @@ const IndexPage = () => (
             pt: [null, null, 5],
             order: [2, null, 1],
           }}>
-          <SocialLink><a href="https://instagram.com/adelaida_design" sx={{color: 'white'}}>Instagram</a></SocialLink>
+          <SocialLink><a href="https://instagram.com/adelaida_design" sx={{color: 'primary'}}>Instagram</a></SocialLink>
           <SocialLink
             sx={{
               mt: [2, null, 4]
-            }}><a href="https://twitter.com/adelaida_design" sx={{color: 'white'}}>Twitter</a></SocialLink>
+            }}><a href="https://twitter.com/adelaida_design" sx={{color: 'primary'}}>Twitter</a></SocialLink>
         </SocialLinks>
         <p sx={{ px: [null, null, 6], order: [1, null, 2], fontSize: 5, fontWeight: 100 }}>
           <p>{"Hello! I'm Alina, a mother for my lovely son and a passionate graphic designer with an eye for colors and simplicity from Tel Aviv - nice to meet you! :)"}</p>
           <p>{"I'm  always looking for appropriate design language"}</p>
           <p>{"Speaking fluent Figma & Sketch"}</p>
-          <p>{"Feel free to say hi via "}<a href="mailto:contact@adelaida.design?subject=Hi!" sx={{textDecoration: 'underline',color: 'white'}}>contact@adelaida.design</a></p>
-          <p><Link to="/cv.pdf" sx={{ textDecoration: 'underline' }}>{"Download my CV"}</Link></p>
+          <p>{"Feel free to say hi via "}<a href="mailto:contact@adelaida.design?subject=Hi!" sx={{textDecoration: 'underline', color: 'primary'}}>contact@adelaida.design</a></p>
+          <p><Link to="/cv.pdf" sx={{ textDecoration: 'underline', color: 'primary' }}>{"Download my CV"}</Link></p>
         </p>
         <SocialLinks
           sx={{
@@ -87,11 +87,11 @@ const IndexPage = () => (
             order: [3, null, null],
           }}
         >
-          <SocialLink><a href="https://www.behance.net/adelaida_design" sx={{color: 'white'}}>Behance</a></SocialLink>
+          <SocialLink><a href="https://www.behance.net/adelaida_design" sx={{color: 'primary'}}>Behance</a></SocialLink>
           <SocialLink
             sx={{
               mt: [2, null, 4]
-            }}><a href="https://dribbble.com/adelaida_design" sx={{color: 'white'}}>Dribbble</a></SocialLink>
+            }}><a href="https://dribbble.com/adelaida_design" sx={{color: 'primary'}}>Dribbble</a></SocialLink>
         </SocialLinks>
       </div>
     </ShowUp>
