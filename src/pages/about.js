@@ -61,7 +61,7 @@ const IndexPage = () => (
             display: 'grid',
             flexDirection: 'column',
             placeItems: 'center',
-            pt: [2, 5, null],
+            pt: [2, null, null],
             pb: 4,
           }}>
           <SocialLinks>
